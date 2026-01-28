@@ -1,81 +1,197 @@
-* { margin: 0; padding: 0; box-sizing: border-box; } 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
 
-body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #1a2e1d 0%, #000000 50%, #113519 100%); color: #ffffff; min-height: 100vh; } 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.app-container { max-width: 900px; margin: 0 auto; padding: 20px; min-height: 100vh; } 
+body {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: 'Orbitron', monospace;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 20% 20%, #001100 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, #002200 0%, transparent 50%);
+}
 
-/* Header */ .header { text-align: center; padding: 40px 0; border-bottom: 2px solid #00ff88; margin-bottom: 40px; } 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-.logo h1 { font-size: 3rem; color: #00ff6e; text-shadow: 0 0 20px rgba(0, 212, 255, 0.5); margin-bottom: 10px; } 
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 30px 0;
+    border-bottom: 3px solid #00ff00;
+    box-shadow: 0 3px 10px rgba(0, 255, 0, 0.3);
+}
 
-.tagline { font-size: 1.1rem; color: #cccccc; font-style: italic; } 
+.title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: 
+        0 0 10px #00ff00,
+        0 0 20px #00ff00,
+        0 0 30px #00ff00;
+    margin-bottom: 10px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
 
-/* Welcome Section */ .welcome-section { text-align: center; margin-bottom: 40px; } 
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
 
-.welcome-section h2 { font-size: 2rem; margin-bottom: 10px; color: #ffffff; } 
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+    flex-grow: 1;
+}
 
-.welcome-section p { font-size: 1.1rem; color: #cccccc; } 
+.game-card {
+    background: linear-gradient(145deg, #111111, #000000);
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 5px 15px rgba(0, 255, 0, 0.2),
+        inset 0 1px 3px rgba(0, 255, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
 
-/* Sports Grid */ .sports-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; } 
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ff00, transparent, #00ff00);
+    z-index: -1;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
-.sport-card { background: rgba(1, 136, 24, 0.158); border-radius: 20px; padding: 30px; text-align: center; backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; cursor: pointer; } 
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 15px 30px rgba(0, 255, 0, 0.4),
+        inset 0 1px 3px rgba(0, 255, 0, 0.2);
+}
 
-.sport-card:hover { transform: translateY(-10px); border-color: #00d4ff; box-shadow: 0 20px 40px rgb(0, 162, 255); } 
+.game-card:hover::before {
+    opacity: 1;
+}
 
-.sport-card.basketball:hover { border-color: #ff6b35; box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2); } 
+.game-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px #00ff00);
+}
 
-.sport-card.soccer:hover { border-color: #2861a7; box-shadow: 0 20px 40px rgba(40, 167, 69, 0.2); } 
+.game-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px #00ff00;
+}
 
-.sport-icon { font-size: 4rem; margin-bottom: 20px; } 
+.game-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
 
-.sport-card h3 { font-size: 1.8rem; margin-bottom: 10px; color: #ffffff; } 
+.high-score {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00ff00;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
 
-.sport-card p { color: #cccccc; margin-bottom: 20px; font-size: 1rem; } 
+.play-button {
+    background: linear-gradient(145deg, #00ff00, #00cc00);
+    color: #000000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+    text-transform: uppercase;
+}
 
-.sport-stats { display: flex; justify-content: space-between; margin-bottom: 25px; font-size: 0.9rem; color: #00d4ff; } 
+.play-button:hover {
+    background: linear-gradient(145deg, #00cc00, #00aa00);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.5);
+}
 
-.play-btn { background: linear-gradient(135deg, #00d4ff, #0099cc); border: none; color: white; padding: 15px 30px; border-radius: 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; width: 100%; } 
+.play-button:active {
+    transform: translateY(-1px);
+}
 
-.play-btn:hover { background: linear-gradient(135deg, #0099cc, #007399); transform: translateY(-2px); } 
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 2px solid #00ff00;
+    margin-top: 50px;
+    opacity: 0.7;
+}
 
-.basketball .play-btn { background: linear-gradient(135deg, #ff6b35, #e55a2b); } 
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 10px #00ff00,
+            0 0 20px #00ff00,
+            0 0 30px #00ff00;
+    }
+    to {
+        text-shadow: 
+            0 0 20px #00ff00,
+            0 0 30px #00ff00,
+            0 0 40px #00ff00;
+    }
+}
 
-.basketball .play-btn:hover { background: linear-gradient(135deg, #e55a2b, #cc4e24); } 
-
-.soccer .play-btn { background: linear-gradient(135deg, #2850a7, #204987); } 
-
-.soccer .play-btn:hover { background: linear-gradient(135deg, #204b87, #1e397e); } 
-
-/* Difficulty Section */ .difficulty-section { text-align: center; } 
-
-.difficulty-section h3 { font-size: 1.5rem; margin-bottom: 25px; color: #ffffff; } 
-
-.difficulty-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; } 
-
-.difficulty-btn { background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; color: #ffffff; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; gap: 10px; } 
-
-.difficulty-btn:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); } 
-
-.difficulty-btn.selected { border-color: #00ff04; background: rgba(0, 255, 55, 0.1); } 
-
-.difficulty-icon { font-size: 2rem; } 
-
-.difficulty-name { font-size: 1.2rem; font-weight: bold; } 
-
-.difficulty-desc { font-size: 0.9rem; color: #cccccc; } 
-
-/* Updated Selection States */ .difficulty-btn.selected { border-color: #00ff08; background: rgba(0, 255, 26, 0.2); transform: scale(1.05) translateY(-5px); box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3); } 
-
-.difficulty-btn.easy.selected { border-color: #28a745; background: rgba(40, 167, 69, 0.2); box-shadow: 0 15px 30px rgba(40, 167, 69, 0.3); } 
-
-.difficulty-btn.hard.selected { border-color: #dc3545; background: rgba(220, 53, 69, 0.2); box-shadow: 0 15px 30px rgba(220, 53, 69, 0.3); } 
-
-/* Non-selected buttons become dimmed when one is selected */ .difficulty-options:has(.difficulty-btn.selected) .difficulty-btn:not(.selected) { opacity: 0.4; transform: scale(0.95); } 
-
-/* Responsive */ @media (max-width: 600px) { .sports-grid { grid-template-columns: 1fr; } 
-
-.difficulty-options { 
-   grid-template-columns: 1fr; 
-} 
- 
-.sport-stats {
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+    
+    .game-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .game-card {
+        padding: 25px;
+    }
+}
