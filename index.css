@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
 
-
-
 #image-click {
     margin: 0;
     padding: 0;
@@ -11,13 +9,21 @@
     justify-content: center;
     height: 75vh;
 }
+body {
+    background-image: image-set("background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 h1 {
     font-size: 60px;
     display: flex;
     justify-content: center;
+    color: beige;
 }
 
 h2 {
     font-size: 45px;
+    color: beige;
 }

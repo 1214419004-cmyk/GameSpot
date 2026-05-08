@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Clicking of Issac</title>
+    <title>The Clicking of Isaac</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <h1> The Clicking Of Issac</h1>
-    <div id="image-click">
-        <img src="Issac.png" onclick="handleClick()" id="issac">
-        <h2 id="tear-display">Tears</h2> 
-    </div>
-    <script src="script.js"></script>  
+    <h1> The Clicking Of Isaac</h1>
+
+        <div id="image-click">
+            <img src="Isaac_.png" onclick="handleClick()" id="isaac">
+            <h2 id="tear-display">Tears</h2>
+        </div>
+
+        <div id="upgrade-section">
+            <button id="upgrade-btn" onclick="buyUpgrade(event)">Buy Upgrade (Cost: 10 tears)</button>
+            <p id="upgrade-message"></p>
+        </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
