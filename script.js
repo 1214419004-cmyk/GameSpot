@@ -7,7 +7,10 @@ if (savedTears !== null) {
   clicks = Number(savedTears);
 }
 
-
+let savedClickValue = localStorage.getItem("savedClickValue");
+if (savedClickValue !== null) {
+  clickValue = Number(savedClickValue);
+}
 
 let tearDisplay = document.getElementById("tear-display");
 
@@ -21,14 +24,19 @@ function handleClick() {
     localStorage.setItem("savedTears", clicks);
 }
 
-function buyUpgrade(event) {
+
+let upgradeBtn = document.getElementById("upgrade-btn");
+
+function buyUpgrade() {
   let upgradeCost = 10;
   
   if (clicks >= upgradeCost) {
-    clicks - upgradeCost;
-    clickValue = clickValue++;
+    console.log("f")
+    clicks = clicks - upgradeCost;
+    clickValue = clickValue + 1;
+    localStorage.setItem("savedClickValue", clickValue);
     tearDisplay.innerText = "Tears: " + clicks;
     localStorage.setItem("savedTears", clicks);
-    .addEventListener(“click”, myFunction); 
   } 
 }
+
