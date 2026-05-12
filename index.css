@@ -36,3 +36,7 @@ h2 {
     font-size: 45px;
     color: #9cc7cd;
 }
+
+#upgrade-section{
+    display: flex;
+}
