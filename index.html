@@ -17,11 +17,24 @@
         </div>
 
         <div id="upgrade-section">
-            <button id="upgrade-btn" onclick="buyUpgrade()">Buy Upgrade (Cost: 10 tears)</button>
-            <button id="upgrade-btn-2" onclick="buyUpgrade2()">Buy Upgrade (Cost: 200 tears)</button>
-            <button id="upgrade-btn-3" onclick="buyUpgrade3()">Buy Upgrade (Cost: 1500 tears)</button>
-            <p id="upgrade-message"></p>
-        </div>
+             <div class="upgrade-item">
+                <img src="upgrade-icon.png" class="upgrade-icon">
+                <button id="upgrade-btn" class="upgrade-button" onclick="buyUpgrade()">Buy Upgrade</button>
+                <p class="upgrade-cost">Cost: 10 tears</p>
+
+                <br>
+
+                <img src="upgrade-icon2.png" class="upgrade2-icon">
+                <button id="upgrade-btn-2" onclick="buyUpgrade2()">Buy Upgrade </button>
+                <p class="upgrade-cost">Cost: 200 tears</p>
+
+                <br>
+
+                <img src="upgrade-icon3.png" class="upgrade3-icon">
+                <button id="upgrade-btn-3" onclick="buyUpgrade3()">Buy Upgrade</button>
+                <p class="upgrade-cost">Cost: 1500 tears</p>
+            </div>
+
 
     <script src="script.js"></script>
 </body>

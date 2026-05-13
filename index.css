@@ -22,7 +22,7 @@ body {
     background-image: image-set("background.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+
 }
 
 h1 {
@@ -37,6 +37,44 @@ h2 {
     color: #9cc7cd;
 }
 
-#upgrade-section{
+#upgrade-section {
+    position: fixed;
+    right: 20px;
+    top: 100px;
     display: flex;
+    flex-direction: column;
 }
+
+.upgrade-item {
+    background-color: rgba(50, 50, 50, 0.8);
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+
+.upgrade-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.upgrade-button {
+    background-color: beige;
+    color: black;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.upgrade-cost {
+    color: beige;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
